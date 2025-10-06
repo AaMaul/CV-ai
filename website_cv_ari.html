@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ari Maulana — Personal CV</title>
+  <meta name="description" content="Ari Maulana — IT Programmer • Master of Ceremony • Kepala Program TJKT" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Icon (Lucide via CDN) -->
+  <script src="https://unpkg.com/feather-icons"></script>
+  <style>
+    :root{
+      --bg:#0f1724; /* dark background for header */
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#0ea5e9; /* blue */
+      --accent-2:#f59e0b; /* gold accent */
+      --glass: rgba(255,255,255,0.06);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, Arial, sans-serif;
+      color:#0b1220;
+      background:linear-gradient(180deg,#f8fafc 0%, #eef2f7 100%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    /* Container */
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+
+    /* Header / Hero */
+    header.hero{
+      background:var(--bg);
+      color:#fff;
+      padding:48px 0 64px;
+      border-radius:16px;
+      margin-bottom:24px;
+      position:relative; overflow:hidden;
+    }
+    .hero-inner{display:flex;gap:24px;align-items:center}
+    .hero-left{flex:1}
+    .hero-right{width:300px;flex-shrink:0}
+    .avatar{width:300px;height:300px;border-radius:20px;background:linear-gradient(135deg,var(--accent),#7dd3fc);display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 10px 30px rgba(2,6,23,0.35)}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    h1{font-family:Poppins, Inter, sans-serif;font-size:28px;margin:0 0 8px}
+    .tagline{font-weight:600;opacity:0.95}
+    .badges{display:flex;gap:8px;margin:16px 0}
+    .badge{background:var(--card);color:#071127;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:600;box-shadow:0 4px 12px rgba(2,6,23,0.12)}
+    .cta-row{display:flex;gap:12px;margin-top:18px}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600
+    }
+    .btn-primary{background:var(--accent);color:#072034}
+    .btn-outline{background:transparent;border:2px solid rgba(255,255,255,0.12);color:#fff}
+
+    /* Sections */
+    section.card{background:var(--card);padding:22px;border-radius:14px;margin-bottom:18px;box-shadow:0 8px 20px rgba(9,10,20,0.04)}
+    .grid{display:grid;gap:18px}
+    .grid.skills{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+
+    /* Role highlights */
+    .role{display:flex;gap:18px;align-items:flex-start}
+    .role .icon{width:62px;height:62px;border-radius:12px;background:var(--glass);display:flex;align-items:center;justify-content:center}
+    .role h3{margin:0;font-size:18px}
+    .role p{margin:8px 0;color:var(--muted)}
+
+    /* Portfolio */
+    .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+    .filter{padding:6px 10px;border-radius:8px;border:1px solid #e6eef5;background:#fff;cursor:pointer}
+    .projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+    .project{border-radius:12px;overflow:hidden;border:1px solid #e6eef5;background:linear-gradient(180deg,#fff,#fcfdff);transition:transform .28s ease, box-shadow .28s ease}
+    .project:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(2,6,23,0.08)}
+    .project .meta{padding:12px}
+    .project img{width:100%;height:140px;object-fit:cover}
+
+    /* Testimonials carousel */
+    .carousel{position:relative}
+    .cards-row{display:flex;gap:12px;overflow:hidden}
+    .testi{min-width:100%;padding:18px}
+
+    /* Contact */
+    .contact-row{display:flex;gap:18px;align-items:flex-start}
+    .contact-left{flex:1}
+    .contact-right{width:300px}
+
+    /* Footer */
+    footer{padding:28px 0;text-align:center;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero-inner{flex-direction:column-reverse;align-items:flex-start}
+      .hero-right{width:100%}
+      .avatar{width:100%;height:220px;border-radius:12px}
+    }
+
+    /* Small intro animations */
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease, transform .6s ease}
+    .reveal.show{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- HERO -->
+    <header class="hero">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <h1 class="reveal">Ari Maulana</h1>
+          <div class="tagline reveal">IT Programmer • Master of Ceremony • Kepala Program TJKT</div>
+          <div class="badges reveal">
+            <div class="badge">Mobile Developer (Flutter / Kotlin)</div>
+            <div class="badge">Web &amp; WordPress</div>
+            <div class="badge">Public Speaking</div>
+          </div>
+          <p class="reveal" style="max-width:62%">Saya adalah profesional IT dengan pengalaman membangun aplikasi mobile dan website, sekaligus MC berpengalaman dan pendidik yang memimpin program kejuruan TJKT. Saya menggabungkan kemampuan teknis, komunikasi, dan kepemimpinan dalam setiap proyek dan kegiatan pembelajaran.</p>
+
+          <div class="cta-row reveal">
+            <a class="btn btn-primary" href="#contact">📥 Kontak & Download CV</a>
+            <a class="btn btn-outline" href="#portfolio">📂 Portfolio</a>
+          </div>
+        </div>
+        <div class="hero-right reveal">
+          <div class="avatar" title="Ari Maulana — avatar">
+            <!-- Placeholder: replace with your photo -->
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=0b5b6e3b9f2d7b3d8a2a8a2a2f9d7f5a" alt="Foto Ari">
+          </div>
+        </div>
+      </div>
+      <!-- decorative circles -->
+      <svg style="position:absolute;right:-120px;bottom:-80px;opacity:0.12;" width="520" height="520" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="260" cy="260" r="260" fill="#38bdf8"/>
+      </svg>
+    </header>
+
+    <!-- ABOUT -->
+    <section class="card reveal">
+      <h2>About Me</h2>
+      <p>Nama: <strong>Ari Maulana</strong> — Programmer, MC, dan Pendidik. Saya fokus pada pembuatan aplikasi mobile (Flutter/Kotlin) dan website (WordPress, React). Selain itu saya aktif sebagai Master of Ceremony untuk berbagai acara dan memegang peran sebagai Kepala Program Jurusan TJKT, bertanggung jawab atas kurikulum dan pengembangan siswa.</p>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="card reveal">
+      <h2>Highlight Profesi</h2>
+      <div class="grid skills" style="margin-top:12px">
+        <div class="role card">
+          <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-6"/><path d="M6 10v6"/><path d="M18 14v6"/><path d="M4 6h16"/></svg></div>
+          <div>
+            <h3>IT Programmer — Mobile &amp; Web</h3>
+            <p>Mengembangkan aplikasi mobile (Flutter, Kotlin) dan website (WordPress, PHP, React). Berpengalaman di pembuatan MVP, integrasi API, deployment, dan optimasi performa.</p>
+            <div style="margin-top:8px"><strong>Tech:</strong> Flutter · Kotlin · React · PHP · MySQL · WordPress</div>
+          </div>
+        </div>
+
+        <div class="role card">
+          <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2 7h7l-5.5 4 2 7L12 17l-5.5 3 2-7L3 9h7z"/></svg></div>
+          <div>
+            <h3>Master of Ceremony</h3>
+            <p>Pengalaman memandu acara formal & non-formal, presentasi, dan event entertaining. Terbiasa bekerja dengan rundown ketat dan audience beragam.</p>
+            <div style="margin-top:8px"><strong>Keahlian:</strong> Public Speaking · Event Host · Voice Control · Script Writing</div>
+          </div>
+        </div>
+
+        <div class="role card">
+          <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-8"/><path d="M6 20v-6"/><path d="M18 20v-4"/><path d="M2 4h20v6H2z"/></svg></div>
+          <div>
+            <h3>Guru / Kepala Program TJKT</h3>
+            <p>Mengelola kurikulum, mentoring siswa, dan pengembangan mata pelajaran TJKT. Fokus pada penerapan praktik industri di kelas dan pembinaan kompetensi siswa.</p>
+            <div style="margin-top:8px"><strong>Fokus:</strong> Kurikulum · Pengembangan SDM · Mentoring · Leadership</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="card reveal" id="portfolio">
+      <h2>Portfolio</h2>
+      <div class="filters" role="tablist">
+        <button class="filter" data-filter="all">All</button>
+        <button class="filter" data-filter="it">IT Projects</button>
+        <button class="filter" data-filter="mc">MC Events</button>
+        <button class="filter" data-filter="teaching">Teaching</button>
+      </div>
+      <div class="projects" id="projects">
+        <!-- sample projects (replace with real) -->
+        <div class="project" data-cat="it">
+          <img src="https://images.unsplash.com/photo-1526378723917-29a3a3b36b2c?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=123" alt="App 1">
+          <div class="meta">
+            <h4>Mobile App — Inventory</h4>
+            <p class="muted">Flutter • REST API • SQLite</p>
+          </div>
+        </div>
+
+        <div class="project" data-cat="it">
+          <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=abc" alt="Web 1">
+          <div class="meta">
+            <h4>Website Sekolah (WordPress)</h4>
+            <p class="muted">WordPress • Custom Theme</p>
+          </div>
+        </div>
+
+        <div class="project" data-cat="mc">
+          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=def" alt="MC Event">
+          <div class="meta">
+            <h4>MC — Wisuda &amp; Seminar</h4>
+            <p class="muted">Host besar 300+ peserta</p>
+          </div>
+        </div>
+
+        <div class="project" data-cat="teaching">
+          <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=ghi" alt="Teaching">
+          <div class="meta">
+            <h4>Kegiatan Praktik Lapangan</h4>
+            <p class="muted">Workshop IoT & Mobile</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="card reveal">
+      <h2>Testimoni</h2>
+      <div class="carousel" id="carousel">
+        <div class="cards-row" id="testiRow">
+          <div class="testi card">
+            <p>"Pak Ari sangat membantu dalam pengembangan kompetensi siswa. Materinya aplikatif dan mudah dipahami." — Siswa</p>
+          </div>
+          <div class="testi card">
+            <p>"MC yang energik dan profesional. Acara berjalan lancar berkat arahan beliau." — Penyelenggara Event</p>
+          </div>
+          <div class="testi card">
+            <p>"Aplikasi yang dibuat Ari mempercepat proses kerja tim kami. Rilis tepat waktu dan maintenance mudah." — Klien</p>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:center;margin-top:12px;gap:8px">
+          <button id="prev" class="filter">Prev</button>
+          <button id="next" class="filter">Next</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="card reveal" id="contact">
+      <h2>Contact</h2>
+      <div class="contact-row">
+        <div class="contact-left">
+          <form id="contactForm" onsubmit="return handleSubmit(event)">
+            <div style="display:flex;gap:8px;margin-bottom:8px">
+              <input required name="name" placeholder="Nama" style="flex:1;padding:10px;border-radius:8px;border:1px solid #e6eef5" />
+              <input required name="email" type="email" placeholder="Email" style="flex:1;padding:10px;border-radius:8px;border:1px solid #e6eef5" />
+            </div>
+            <textarea required name="message" placeholder="Pesan" style="width:100%;padding:12px;border-radius:8px;border:1px solid #e6eef5;min-height:120px"></textarea>
+            <div style="margin-top:12px;display:flex;gap:8px">
+              <button class="btn btn-primary" type="submit">Kirim Pesan</button>
+              <a class="btn btn-outline" href="mailto:ari.email@example.com">Email</a>
+              <a class="btn btn-outline" target="_blank" href="https://wa.me/6281234567890?text=Halo%20Pak%20Ari">WhatsApp</a>
+            </div>
+          </form>
+        </div>
+        <div class="contact-right">
+          <div style="padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff,#fcfeff);box-shadow:0 6px 18px rgba(10,20,40,0.04)">
+            <h4>Let’s connect</h4>
+            <p style="color:var(--muted)">LinkedIn · GitHub · Instagram · Portfolio</p>
+            <div style="margin-top:12px;display:flex;flex-direction:column;gap:8px">
+              <a href="#">LinkedIn</a>
+              <a href="#">GitHub</a>
+              <a href="#">Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="reveal">© <span id="year"></span> Ari Maulana — All rights reserved.</footer>
+  </div>
+
+  <script>
+    // icons
+    document.addEventListener('DOMContentLoaded',()=>{ if(window.feather) feather.replace(); document.getElementById('year').textContent = new Date().getFullYear(); });
+
+    // simple reveal on scroll
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
+    },{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+    // project filters
+    document.querySelectorAll('.filter[data-filter]').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const f = btn.dataset.filter;
+        document.querySelectorAll('.project').forEach(p=>{
+          if(f==='all') p.style.display='block'; else p.style.display = p.dataset.cat===f ? 'block':'none';
+        });
+      });
+    });
+
+    // testimonial carousel (simple)
+    const row = document.getElementById('testiRow');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    let idx=0;
+    const total = row.children.length;
+    function showTesti(i){ row.style.transform = `translateX(${-i*100}%)`; }
+    prev.onclick = ()=>{ idx = (idx-1+total)%total; showTesti(idx); }
+    next.onclick = ()=>{ idx = (idx+1)%total; showTesti(idx); }
+
+    // contact handler (no backend) — opens mailto as fallback
+    function handleSubmit(e){
+      e.preventDefault();
+      const form = e.target;
+      const name = encodeURIComponent(form.name.value);
+      const email = encodeURIComponent(form.email.value);
+      const msg = encodeURIComponent(form.message.value);
+      // fallback: open mailto
+      const subject = encodeURIComponent('Pesan dari website CV');
+      const body = encodeURIComponent(`Nama: ${form.name.value}\nEmail: ${form.email.value}\n\n${form.message.value}`);
+      window.location.href = `mailto:ari.email@example.com?subject=${subject}&body=${body}`;
+      return false;
+    }
+
+    // small accessibility improvement: keyboard filter
+    document.querySelectorAll('.filter').forEach(f=>f.setAttribute('tabindex','0'));
+  </script>
+</body>
+</html>
